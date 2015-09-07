@@ -31,5 +31,12 @@ public class LongestOddWord
     }
     
     System.out.println("Longest word = " + word + " at " + length + " characters");
+    
+    String longest = Files.lines(Paths.get("/usr/share/dict/words"))
+                                      .filter(s -> s.length() % 2 != 0)
+                                      .reduce("", (a, b) -> (b.length() > a.length()) ? b : a);
+    
+    System.out.println("Longest word = " + longest + " at " + longest.length() + " characters");
+
   }
 }
