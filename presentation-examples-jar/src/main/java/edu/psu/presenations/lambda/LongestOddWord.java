@@ -17,6 +17,7 @@ public class LongestOddWord
 {
   public static void main(String[] args) throws IOException
   {
+    //Iteration
     FileInputStream fis = new FileInputStream(new File("/usr/share/dict/words"));
 
     BufferedReader br = new BufferedReader(new InputStreamReader(fis));
@@ -38,6 +39,7 @@ public class LongestOddWord
 
     System.out.println("Longest word = " + word + " at " + length + " characters");
 
+    //Functional
     String longest = Files.lines(Paths.get("/usr/share/dict/words"))
                           .filter(s -> s.length() % 2 != 0)
                           .reduce("", (a, b) -> (b.length() > a.length()) ? b : a);
