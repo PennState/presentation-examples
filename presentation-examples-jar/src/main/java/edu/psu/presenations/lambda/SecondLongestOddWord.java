@@ -19,7 +19,7 @@ public class SecondLongestOddWord
                           .filter(s -> s.length() % 2 != 0)
                           .skip(1)
                           .findFirst()
-                          .orElse("wah wah wah waaaaaaaaah");
+                          .orElse("wah wah wah waaaaaaaaah");  //Sad trombone
 
         System.out.println("Second Longest word = " + longest + " at " + longest.length() + " characters");
 
